@@ -1,0 +1,12 @@
+package general
+
+import (
+    "github.com/rangzen/gotha-top/services"
+)
+
+templ Layout(stats services.GeneralStat) {
+	<div>
+		<p>Content General</p>
+        <p>Hostname: { stats.Hostname }</p>
+	</div>
+}

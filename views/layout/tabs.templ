@@ -1,0 +1,15 @@
+package layout
+
+import "github.com/rangzen/gotha-top/views/home"
+
+templ Tabs() {
+	<div role="tablist" class="tabs tabs-bordered">
+		<input type="radio" name="my_tabs_1" role="tab" class="tab" aria-label="Home" checked="checked"/>
+		<div role="tabpanel" class="tab-content p-10">@home.Home()
+</div>
+		<input type="radio" name="my_tabs_1" role="tab" class="tab" aria-label="Processes"/>
+		<div role="tabpanel" class="tab-content p-10">List of processes (TBD)</div>
+		<input type="radio" name="my_tabs_1" role="tab" class="tab" aria-label="General"/>
+		<div role="tabpanel" class="tab-content p-10">General data on the host (TBD)</div>
+	</div>
+}

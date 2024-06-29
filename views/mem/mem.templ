@@ -1,0 +1,19 @@
+package mem
+
+import (
+	"fmt"
+	"github.com/rangzen/gotha-top/services"
+)
+
+templ Mem(mem services.VirtualMemoryStat) {
+	<section
+		class="mem"
+		hx-get="/mem"
+		hx-trigger="load delay:2s"
+		hx-swap="outerHTML"
+	>
+		<h2>Memory ({ prettyByteSize(int(mem.Total)) })</h2>
+		<p>{ fmt.Sprintf("%s used", prettyByteSize(int(mem.Used))) }</p>
+		<progress class="progress w-56" value={ fmt.Sprintf("%d", int(mem.UsedPercent)) } max="100"></progress>
+	</section>
+}

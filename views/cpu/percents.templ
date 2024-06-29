@@ -1,0 +1,40 @@
+package cpu
+
+import "fmt"
+
+templ Percents(percents []float64) {
+	<section
+		class="cpu"
+		hx-get="/cpu/percents"
+		hx-trigger="load delay:1s"
+		hx-swap="outerHTML"
+	>
+		<h2>CPU ({ fmt.Sprintf("%d", len(percents))})</h2>
+		<ul>
+			for i, percent := range percents {
+				<li>
+					<p>{ fmt.Sprintf("CPU %d: %.1f%%", i, percent) }</p>
+					<progress
+						class={ progressWithColor(percent) }
+						value={ fmt.Sprintf("%d", int(percent)) }
+						max="100"
+						aria-label="CPU"
+						aria-valuemin="0"
+						aria-valuemax="100"
+						aria-valueno
+					></progress>
+				</li>
+			}
+		</ul>
+	</section>
+}
+
+func progressWithColor(percent float64) string {
+	if percent < 60 {
+		return "progress progress-primary w-56"
+	} else if percent < 80 {
+		return "progress progress-warning w-56"
+	} else {
+		return "progress progress-error w-56"
+	}
+}
