@@ -1,2 +1,2 @@
-<div><p>Content General</p><p>Hostname: 
-</p></div>
+<div class=\"flex\">
+</div>

@@ -1,12 +1,35 @@
 package general
 
 import (
-    "github.com/rangzen/gotha-top/services"
+	"fmt"
+	"github.com/rangzen/gotha-top/services"
 )
 
 templ Layout(stats services.GeneralStat) {
-	<div>
-		<p>Content General</p>
-        <p>Hostname: { stats.Hostname }</p>
+	<div class="flex">
+		@Card("Host") {
+			@Table([]KV{
+				{"Name", stats.Hostname},
+				{"ID", stats.HostID},
+				{"Boot time", fmt.Sprintf("%d", stats.BootTime)},
+				{"Processes", fmt.Sprintf("%d", stats.Procs)},
+			})
+		}
+		@Card("Platform") {
+			@Table([]KV{
+				{"OS", stats.OS},
+				{"Architecture", stats.KernelArch},
+				{"Distribution", stats.Platform},
+				{"Family", stats.PlatformFamily},
+				{"Version", stats.PlatformVersion},
+				{"Kernel", stats.KernelVersion},
+			})
+		}
+		@Card("Virtualization") {
+			@Table([]KV{
+				{"System", stats.VirtualizationSystem},
+				{"Role", stats.VirtualizationRole},
+			})
+		}
 	</div>
 }

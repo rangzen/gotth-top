@@ -1,0 +1,21 @@
+package general
+
+type KV struct {
+	Key   string
+	Value string
+}
+
+templ Table(kvs []KV) {
+	<div class="overflow-x-auto">
+		<table class="table">
+			<tbody>
+				for _, kv := range kvs {
+					<tr class="hover">
+						<th class="text-left">{ kv.Key }</th>
+						<td>{ kv.Value } </td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+}
