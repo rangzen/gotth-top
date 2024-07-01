@@ -1,4 +1,4 @@
-module github.com/rangzen/gotha-top
+module github.com/rangzen/gotth-top
 
 go 1.21.0
 

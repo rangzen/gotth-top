@@ -10,7 +10,7 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import (
 	"fmt"
-	"github.com/rangzen/gotha-top/services"
+	"github.com/rangzen/gotth-top/services"
 )
 
 func Mem(mem services.VirtualMemoryStat) templ.Component {

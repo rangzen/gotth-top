@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
-	"github.com/rangzen/gotha-top/services"
-	"github.com/rangzen/gotha-top/views/mem"
+	"github.com/rangzen/gotth-top/services"
+	"github.com/rangzen/gotth-top/views/mem"
 )
 
 type MemService interface {

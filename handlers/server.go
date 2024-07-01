@@ -6,8 +6,8 @@ import (
 	"os"
 
 	"github.com/labstack/echo/v4"
-	"github.com/rangzen/gotha-top/services"
-	"github.com/rangzen/gotha-top/views"
+	"github.com/rangzen/gotth-top/services"
+	"github.com/rangzen/gotth-top/views"
 )
 
 type Server struct {

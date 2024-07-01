@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/labstack/echo/v4"
-	"github.com/rangzen/gotha-top/services"
-	"github.com/rangzen/gotha-top/views/cpu"
+	"github.com/rangzen/gotth-top/services"
+	"github.com/rangzen/gotth-top/views/cpu"
 )
 
 type CpuService interface {
