@@ -28,7 +28,7 @@ func Tabs() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div role=\"tablist\" class=\"tabs tabs-bordered\"><input type=\"radio\" name=\"my_tabs_1\" role=\"tab\" class=\"tab\" aria-label=\"Home\" checked=\"checked\"><div role=\"tabpanel\" class=\"tab-content p-10\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -36,7 +36,7 @@ func Tabs() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 2)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><input type=\"radio\" name=\"my_tabs_1\" role=\"tab\" class=\"tab\" aria-label=\"Processes\"><div role=\"tabpanel\" class=\"tab-content p-10\">List of processes (TBD)</div><input type=\"radio\" name=\"my_tabs_1\" role=\"tab\" class=\"tab\" aria-label=\"General\"><div role=\"tabpanel\" class=\"tab-content p-10\">General data on the host (TBD)</div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

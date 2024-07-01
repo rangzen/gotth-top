@@ -6,8 +6,10 @@ import (
 	"os"
 
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/rangzen/gotth-top/services"
 	"github.com/rangzen/gotth-top/views"
+	slogecho "github.com/samber/slog-echo"
 )
 
 type Server struct {
@@ -26,11 +28,15 @@ func (s *Server) Run() error {
 	app := echo.New()
 	app.HideBanner = true
 
+	// Middleware
+	app.Use(slogecho.New(s.log))
+	app.Use(middleware.Recover())
 
 	// Handle static assets:
 	assetHandler := http.FileServer(views.GetPublicAssetsFileSystem())
 	app.GET("/public/*", echo.WrapHandler(http.StripPrefix("/public/", assetHandler)))
 
+	// Routes
 	app.GET("/", Index)
 
 	app.GET("/home", Home)
@@ -47,6 +53,7 @@ func (s *Server) Run() error {
 	generalHandler := NewGeneralHandler(generalService)
 	app.GET("/general", generalHandler.Base)
 
+	// Start application
 	return app.Start(":8080")
 
 }
