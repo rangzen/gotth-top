@@ -3,6 +3,8 @@ package mem
 import (
 	"fmt"
 	"github.com/rangzen/gotth-top/services"
+	"github.com/rangzen/gotth-top/views"
+	
 )
 
 templ Mem(mem services.VirtualMemoryStat) {
@@ -12,8 +14,8 @@ templ Mem(mem services.VirtualMemoryStat) {
 		hx-trigger="load delay:2s"
 		hx-swap="outerHTML"
 	>
-		<h2>Memory ({ prettyByteSize(int(mem.Total)) })</h2>
-		<p>{ fmt.Sprintf("%s used", prettyByteSize(int(mem.Used))) }</p>
+		<h2>Memory ({ views.PrettyByteSize(int(mem.Total)) })</h2>
+		<p>{ fmt.Sprintf("%s used", views.PrettyByteSize(int(mem.Used))) }</p>
 		<progress class="progress w-56" value={ fmt.Sprintf("%d", int(mem.UsedPercent)) } max="100"></progress>
 	</section>
 }

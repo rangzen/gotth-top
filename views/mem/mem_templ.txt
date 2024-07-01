@@ -1,0 +1,4 @@
+<section class=\"mem\" hx-get=\"/mem\" hx-trigger=\"load delay:2s\" hx-swap=\"outerHTML\"><h2>Memory (
+)</h2><p>
+</p><progress class=\"progress w-56\" value=\"
+\" max=\"100\"></progress></section>

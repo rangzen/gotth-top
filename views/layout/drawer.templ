@@ -36,7 +36,13 @@ templ Drawer() {
 								hx-target="#content"
 							>Home</a>
 						</li>
-						<li><a>Processes</a></li>
+						<li>
+							<a
+								hx-get="/proc"
+								hx-trigger="click"
+								hx-target="#content"
+							>Processes</a>
+						</li>
 						<li>
 							<a
 								hx-get="/general"
@@ -63,7 +69,13 @@ templ Drawer() {
 						hx-target="#content"
 					>Home</a>
 				</li>
-				<li><a>Processes</a></li>
+				<li>
+					<a
+						hx-get="/proc"
+						hx-trigger="click"
+						hx-target="#content"
+					>Processes</a>
+				</li>
 				<li>
 					<a
 						hx-get="/general"

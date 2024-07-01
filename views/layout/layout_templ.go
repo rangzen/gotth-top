@@ -26,7 +26,7 @@ func Base() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<html lang=\"en-US\"><head><title>gotth top</title><meta name=\"description\" content=\"top equivalent on the gotth stack\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta charset=\"utf-8\"><link rel=\"shortcut icon\" href=\"/public/favicon.ico\" type=\"image/x-icon\"><link rel=\"stylesheet\" href=\"/public/styles.css\"><script src=\"/public/vendor/htmx.min@2.0.0.js\" defer></script></head><body class=\"h-full\"><main class=\"p-4\">")
+		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -34,7 +34,7 @@ func Base() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</main><footer class=\"text-center text-sm text-gray-500 py-4\"><p>Thank you for using <a href=\"https://github.com/rangzen/gotth-top\">gotth top</a>!</p></footer></body></html>")
+		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 2)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

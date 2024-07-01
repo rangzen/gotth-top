@@ -49,6 +49,10 @@ func (s *Server) Run() error {
 	cpuHandler := NewCpuHandler(cpuService)
 	app.GET("/cpu/percents", cpuHandler.ListCpuPercents)
 
+	procService := services.NewProcService()
+	procHandler := NewProcHandler(procService)
+	app.GET("/proc", procHandler.ListProc)
+
 	generalService := services.NewGeneralService()
 	generalHandler := NewGeneralHandler(generalService)
 	app.GET("/general", generalHandler.Base)

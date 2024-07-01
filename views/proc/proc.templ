@@ -1,0 +1,46 @@
+package proc
+
+import (
+	"fmt"
+	"github.com/rangzen/gotth-top/services"
+	"github.com/rangzen/gotth-top/views"
+)
+
+templ Procs(procs []services.ProcStat) {
+	<section
+		class="proc"
+		hx-get="/proc"
+		hx-trigger="load delay:2s"
+		hx-swap="outerHTML"
+	>
+		<h2>Processes ({ fmt.Sprintf("%d", len(procs)) })</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>PID</th>
+					<th>Parent</th>
+					<th>User</th>
+					<th>Virtual</th>
+					<th>Resident</th>
+					<th>CPU%</th>
+					<th>Mem%</th>
+					<th>Command</th>
+				</tr>
+			</thead>
+			<tbody>
+				for _, proc := range procs {
+					<tr>
+						<td>{ fmt.Sprintf("%d", proc.PID) }</td>
+						<td>{ fmt.Sprintf("%d", proc.PPID) }</td>
+						<td>{ proc.User }</td>
+						<td>{ views.PrettyByteSize(int(proc.VirtualMemory)) }</td>
+						<td>{ views.PrettyByteSize(int(proc.ResidentMemory)) }</td>
+						<td>{ fmt.Sprintf("%.1f", proc.CPUPercent ) }</td>
+						<td>{ fmt.Sprintf("%.1f", proc.MemPercent ) }</td>
+						<td>{ proc.Exe }</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</section>
+}
