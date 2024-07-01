@@ -24,6 +24,8 @@ func (s *Server) Run() error {
 	s.log.Info("starting top")
 
 	app := echo.New()
+	app.HideBanner = true
+
 
 	// Handle static assets:
 	assetHandler := http.FileServer(views.GetPublicAssetsFileSystem())
