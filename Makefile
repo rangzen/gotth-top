@@ -30,6 +30,6 @@ build-templ:
 	@templ generate
 
 build-server:
-	@go build -o bin/gotth-top ./cmd/gotth-top/main.go
+	@go build -ldflags="-s -w" -o bin/gotth-top ./cmd/gotth-top/main.go
 
 .DEFAULT_GOAL := dev
