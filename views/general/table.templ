@@ -1,4 +1,4 @@
- package general
+package general
 
 type KV struct {
 	Key   string
@@ -11,8 +11,8 @@ templ Table(kvs []KV) {
 			<tbody>
 				for _, kv := range kvs {
 					<tr class="hover">
-						<th class="text-left">{ kv.Key }</th>
-						<td>{ kv.Value } </td>
+						<td class="text-left">{ kv.Key }</td>
+						<td>{ kv.Value }</td>
 					</tr>
 				}
 			</tbody>
