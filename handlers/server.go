@@ -32,7 +32,7 @@ func (s *Server) Run() error {
 			"go", info.GoVersion,
 			"version", info.Main.Version,
 			"path", info.Main.Path,
-			"sum", info.Main.Sum,
+			"checksum", info.Main.Sum,
 		)
 	} else {
 		s.log.Warn("build info not available")
@@ -40,6 +40,7 @@ func (s *Server) Run() error {
 
 	app := echo.New()
 	app.HideBanner = true
+	app.HidePort = true
 
 	// Middleware
 	app.Use(slogecho.New(s.log))
@@ -71,6 +72,7 @@ func (s *Server) Run() error {
 	app.GET("/general", generalHandler.Base)
 
 	// Start application
+	s.log.Info("starting server on :8080")
 	return app.Start(":8080")
 
 }
