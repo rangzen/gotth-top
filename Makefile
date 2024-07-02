@@ -1,4 +1,4 @@
-.PHONY: dev-server dev-tailwind dev-templ dev build-server build-tailwind build-templ build launch deploy
+.PHONY: dev-server dev-tailwind dev-templ dev build-server build-tailwind build-templ build
 
 #-----------------------------------------------------
 # DEV
@@ -31,25 +31,5 @@ build-templ:
 
 build-server:
 	@go build -o bin/server ./cmd/server/main.go
-
-#-----------------------------------------------------
-# DATABASE
-#-----------------------------------------------------
-
-# drop:
-# 	@go run ./cmd/drop
-
-# seed:
-# 	@go run ./cmd/seed
-
-#-----------------------------------------------------
-# DEPLOY
-#-----------------------------------------------------
-
-launch:
-	@fly launch
-
-deploy:
-	@fly deploy
 
 .DEFAULT_GOAL := dev
