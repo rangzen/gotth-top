@@ -4,6 +4,7 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
+	"runtime/debug"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -23,7 +24,19 @@ func NewServer() *Server {
 }
 
 func (s *Server) Run() error {
-	s.log.Info("starting top")
+	s.log.Info("starting GoTTH top")
+
+	info, ok := debug.ReadBuildInfo()
+	if ok {
+		s.log.Info("build info",
+			"go", info.GoVersion,
+			"version", info.Main.Version,
+			"path", info.Main.Path,
+			"sum", info.Main.Sum,
+		)
+	} else {
+		s.log.Warn("build info not available")
+	}
 
 	app := echo.New()
 	app.HideBanner = true
