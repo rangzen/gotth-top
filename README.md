@@ -2,6 +2,14 @@
 
 This is a simple implementation of the `top` command, which provides a dynamic real-time view of a running system. It is built using the GoTTH Stack for fun.
 
+- [GoTTH top](#gotth-top)
+  - [The GoTTH Stack](#the-gotth-stack)
+  - [Suplementary tools](#suplementary-tools)
+  - [Installation](#installation)
+    - [Binary Installation with Go installed](#binary-installation-with-go-installed)
+  - [Requirements for dev](#requirements-for-dev)
+  - [References](#references)
+
 ## The GoTTH Stack
 
 - [Go](https://go.dev): The backend language used for server-side logic and handling requests.
@@ -15,13 +23,22 @@ This is a simple implementation of the `top` command, which provides a dynamic r
 - [Echo](https://echo.labstack.com): A high-performance, extensible web framework for Go.
 - [daisyUI](https://daisyui.com): A plugin for Tailwind CSS that adds a set of beautiful components and utilities.
 
-## Requirements
+## Installation
+
+### Binary Installation with Go installed
 
 ```shell
-go install templ     # CLI tool to watch templates
-npm install onchange # Files Watcher
+go install github.com/rangzen/gotth-top/cmd/gotth-top@latest
+```
+
+## Requirements for dev
+
+```shell
+go install github.com/a-h/templ/cmd/templ@latest # CLI tool to watch templates
+npm install onchange                             # Files Watcher
 ```
 
 ## References
+
 - [A GitHub Repository with an example of the stack](https://github.com/danawoodman/go-echo-htmx-templ).
 - [Another GitHub Repository with an example of the stack](https://github.com/emarifer/go-echo-templ-htmx).

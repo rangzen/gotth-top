@@ -26,7 +26,7 @@ func Home() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div hx-get=\"/cpu/percents\" hx-trigger=\"load delay:.5s\" hx-swap=\"outerHTML\"><p>Loading CPU stats...</p><span class=\"loading loading-spinner loading-sm\"></span></div><div hx-get=\"/mem\" hx-trigger=\"load delay:.5s\" hx-swap=\"outerHTML\"><p>Loading memory stats...</p><span class=\"loading loading-spinner loading-sm\"></span></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

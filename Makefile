@@ -14,7 +14,7 @@ dev-templ:
 	@templ generate --watch
 
 dev-server:
-	@onchange -k -i '**/*.go' '**/*.html' 'views/public/**/*' -- go run ./cmd/server
+	@onchange -k -i '**/*.go' '**/*.html' 'views/public/**/*' -- go run ./cmd/gotth-top
 
 #-----------------------------------------------------
 # BUILD
@@ -30,6 +30,6 @@ build-templ:
 	@templ generate
 
 build-server:
-	@go build -o bin/server ./cmd/server/main.go
+	@go build -o bin/gotth-top ./cmd/gotth-top/main.go
 
 .DEFAULT_GOAL := dev

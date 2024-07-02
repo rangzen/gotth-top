@@ -1,1 +1,0 @@
-<div hx-get=\"/cpu/percents\" hx-trigger=\"load delay:.5s\" hx-swap=\"outerHTML\"><p>Loading CPU stats...</p><span class=\"loading loading-spinner loading-sm\"></span></div><div hx-get=\"/mem\" hx-trigger=\"load delay:.5s\" hx-swap=\"outerHTML\"><p>Loading memory stats...</p><span class=\"loading loading-spinner loading-sm\"></span></div>

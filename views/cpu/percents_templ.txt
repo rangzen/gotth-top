@@ -1,8 +1,0 @@
-<section class=\"cpu\" hx-get=\"/cpu/percents\" hx-trigger=\"load delay:1s\" hx-swap=\"outerHTML\"><h2>CPU (
-)</h2><ul>
-<li><p>
-</p>
-<progress class=\"
-\" value=\"
-\" max=\"100\" aria-label=\"CPU\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valueno></progress></li>
-</ul></section>
