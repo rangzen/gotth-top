@@ -1,8 +1,12 @@
 package main
 
-import "github.com/rangzen/gotth-top/handlers"
+import (
+	"log"
+
+	"github.com/rangzen/gotth-top/handlers"
+)
 
 func main() {
 	server := handlers.NewServer()
-	server.Run()
+	log.Fatal(server.Run())
 }
