@@ -1,30 +1,27 @@
-# top tool with the GoTTH Stack
+# GoTTH top
 
-## General
+This is a simple implementation of the `top` command, which provides a dynamic real-time view of a running system. It is built using the GoTTH Stack for fun.
 
-Simple top implementation providing a dynamic real-time view of a running system build with the GoTTH Stack for fun.
+## The GoTTH Stack
 
-## GoTTH Stack
+- [Go](https://go.dev): The backend language used for server-side logic and handling requests.
+- [Templ](https://templ.guide): A templating language for generating HTML templates in Go format.
+- [Tailwind CSS](https://tailwindcss.com): A utility-first CSS framework for styling the application.
+- [HTMX](https://htmx.org): A library for adding interactivity and dynamic updates to web pages without relying heavily on JavaScript.
 
-- [Go](https://go.dev), the backend language used for server-side logic and handling requests
-- [Templ](https://templ.guide), a templating language for generating HTML templates in Go format
-- [Tailwind CSS](https://tailwindcss.com), a utility-first CSS framework for styling the application
-- [HTMX](https://htmx.org), a library for adding interactivity and dynamic updates to web pages without relying heavily on JavaScript
+## Suplementary tools
 
-Add-ons:
-
-- [gopsutil](https://github.com/shirou/gopsutil), psutil (process and system utilities) port in Go
-- [Echo](https://echo.labstack.com), a high-performance, extensible web framework for Go
-- [daisyUI](https://daisyui.com), a plugin for Tailwind CSS that adds a set of beautiful components and utilities
+- [gopsutil](https://github.com/shirou/gopsutil): A Go port of psutil (process and system utilities). GoTTH top relies heavily on this.
+- [Echo](https://echo.labstack.com): A high-performance, extensible web framework for Go.
+- [daisyUI](https://daisyui.com): A plugin for Tailwind CSS that adds a set of beautiful components and utilities.
 
 ## Requirements
 
 ```shell
-go install templ
-npm install onchange
+go install templ     # CLI tool to watch templates
+npm install onchange # Files Watcher
 ```
 
 ## References
-
-- https://github.com/danawoodman/go-echo-htmx-templ
-- https://github.com/emarifer/go-echo-templ-htmx
+- [A GitHub Repository with an example of the stack](https://github.com/danawoodman/go-echo-htmx-templ).
+- [Another GitHub Repository with an example of the stack](https://github.com/emarifer/go-echo-templ-htmx).
