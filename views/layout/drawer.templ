@@ -3,8 +3,8 @@ package layout
 import "github.com/rangzen/gotth-top/views/home"
 
 templ Drawer() {
-	<div class="drawer">
-		<input id="my-drawer-1" type="checkbox" class="drawer-toggle"/>
+	<div x-data="{ drawerOpen: false }" class="drawer">
+		<input id="my-drawer-1" type="checkbox" class="drawer-toggle" x-model="drawerOpen"/>
 		<div class="drawer-content flex flex-col">
 			<!-- Navbar -->
 			<div class="navbar bg-base-300 w-full">
@@ -67,6 +67,7 @@ templ Drawer() {
 						hx-get="/home"
 						hx-trigger="click"
 						hx-target="#content"
+						x-on:click="drawerOpen = false"
 					>Home</a>
 				</li>
 				<li>
@@ -74,6 +75,7 @@ templ Drawer() {
 						hx-get="/proc"
 						hx-trigger="click"
 						hx-target="#content"
+						x-on:click="drawerOpen = false"
 					>Processes</a>
 				</li>
 				<li>
@@ -81,6 +83,7 @@ templ Drawer() {
 						hx-get="/general"
 						hx-trigger="click"
 						hx-target="#content"
+						x-on:click="drawerOpen = false"
 					>General</a>
 				</li>
 			</ul>

@@ -22,6 +22,7 @@ This is a simple implementation of the `top` command, which provides a dynamic r
 - [gopsutil](https://github.com/shirou/gopsutil): A Go port of psutil (process and system utilities). GoTTH top relies heavily on this.
 - [Echo](https://echo.labstack.com): A high-performance, extensible web framework for Go.
 - [daisyUI](https://daisyui.com): A plugin for Tailwind CSS that adds a set of beautiful components and utilities.
+- [Alpine.js](https://alpinejs.dev/): A minimal JavaScript framework for building interactive web interfaces.
 
 ## Installation
 
