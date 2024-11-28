@@ -36,7 +36,8 @@ go install github.com/rangzen/gotth-top/cmd/gotth-top@latest
 
 ```shell
 go install github.com/a-h/templ/cmd/templ@latest # CLI tool to watch templates
-npm install onchange                             # Files Watcher
+go mod tidy                                      # Update dependencies
+npm install -g onchange                          # Files Watcher
 ```
 
 ## References

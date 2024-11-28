@@ -21,7 +21,7 @@ dev-server:
 #-----------------------------------------------------
 
 build:
-	@make build-tailwind build-templ build-server 
+	@make build-tailwind build-templ build-server
 
 build-tailwind:
 	@npx tailwindcss -m -i ./tailwind.css -o ./views/public/styles.css $(ARGS)
@@ -32,4 +32,4 @@ build-templ:
 build-server:
 	@go build -ldflags="-s -w" -o bin/gotth-top ./cmd/gotth-top/main.go
 
-.DEFAULT_GOAL := dev
+.DEFAULT_GOAL := build
